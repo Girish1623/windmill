@@ -1,0 +1,1372 @@
+*{
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+.container {
+  position: relative;
+  /* width: 82rem; */
+  height: 40rem;
+  width: 100%;
+  /* height: 100; */
+  overflow: hidden;
+  /* border: solid; */
+margin: auto;
+}
+
+#day-to-night {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sky {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  opacity: 1;
+}
+
+.morning {
+  background: linear-gradient(to top, #ffd89b, #a1c4fd);
+  /* soft peach → coral pink → light sky blue */
+  animation-name: Morning;
+}
+
+.day {
+  background: linear-gradient(to top, #89f7fe, #66a6ff);
+  /* aqua blue → bright blue */
+  animation-name: Day;
+}
+
+.sunset {
+  background: linear-gradient(to top, #fbc2eb, #a6c1ee);
+  /* pastel pink → lavender → warm rose → pale peach */
+  animation-name: Sunset;
+}
+
+.night {
+  background: linear-gradient(to top, #0d1b2a, #1b263b, #415a77);
+  animation-name: Night;
+}
+
+#grass {
+  height: 100%;
+  width: 100%;
+  background-color: green;
+  position: absolute;
+  top: 28rem;
+  z-index: 1;
+}
+
+#road {
+  height: 7rem;
+  width: 100%;
+  background-color: rgb(24, 23, 23);
+  position: absolute;
+  /* margin-left: 0rem ; */
+  margin-top: 3.7rem;
+}
+
+#line {
+  position: absolute;
+  height: 10px;
+  width: 3rem;
+  top: 3.4rem;
+  left: 2rem;
+}
+
+.line1,
+.line2,
+.line3,
+.line4 {
+  position: absolute;
+  height: 10px;
+  width: 6rem;
+  background-color: white;
+}
+
+.line2 {
+  left: 27rem;
+}
+
+.line3 {
+  left: 54rem;
+}
+
+.line1::after,
+.line1::before,
+.line2::after,
+.line2::before,
+.line3::after,
+.line3::before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 6rem;
+  background: white;
+}
+
+.line1::after,
+.line2::after,
+.line3::after {
+  left: 9rem;
+}
+
+.line1::before,
+.line2::before,
+.line3::before {
+  left: 18rem;
+}
+
+.lamp {
+  position: absolute;
+  top: 25.6rem;
+  left: 5rem;
+  z-index: 50;
+}
+
+#lamp1,
+#lamp2,
+#lamp3 {
+  position: absolute;
+  height: 6rem;
+  width: 5px;
+  background-color: rgb(0, 0, 0);
+}
+
+#lamp2 {
+  top: 7.2rem;
+  left: 12rem;
+}
+
+#lamp3 {
+  left: 74rem;
+}
+
+#lamp1::after,
+#lamp1::before,
+#lamp2::after,
+#lamp2::before {
+  content: "";
+  position: absolute;
+  height: 6rem;
+  width: 5px;
+  background-color: rgb(0, 0, 0);
+  left: 3rem;
+  /* z-index: 1; */
+}
+
+#lamp1::after,
+#lamp2::after {
+  left: 25rem;
+  /* top: 2rem; */
+}
+
+#lamp1::before,
+#lamp2::before {
+  left: 50rem;
+}
+
+.light {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  /* z-index: -0.99; */
+}
+
+#light1,
+#light2,
+#light3 {
+  position: absolute;
+  height: 0.8rem;
+  width: 0.8rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  top: -10px;
+  left: -4.5px;
+  animation: bulb 40s linear infinite;
+}
+
+#light2 {
+  top: 6.77rem;
+  left: 11.73rem;
+  z-index: -0.99;
+}
+
+#light3 {
+  left: 73.72rem;
+  z-index: -0.99;
+}
+
+#light1::after,
+#light1::before,
+#light2::after,
+#light2::before {
+  content: "";
+  position: absolute;
+  height: 0.8rem;
+  width: 0.8em;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+
+  left: 25rem;
+  animation: bulb 40s linear infinite;
+  /* z-index: -0.98; */
+}
+#light1::before,
+#light2::before {
+  left: 50rem;
+  /* z-index: -0.9; */
+}
+#sun,
+#moon {
+  position: absolute;
+  top: 19rem;
+  left: -7rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+#sun {
+  background-color: #ffd700;
+  box-shadow: 0 0 20px #ffd700;
+  animation: sun 40s linear infinite;
+}
+
+#moon {
+  background-color: white;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+  animation: moon 40s linear infinite;
+}
+
+.cloud {
+  left: -9rem;
+  animation-name: cloud;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#cloud1,
+#cloud1::before,
+#cloud1::after,
+#cloud2,
+#cloud2::before,
+#cloud2::after {
+  width: 9rem;
+  height: 7rem;
+  border-radius: 50%;
+  position: absolute;
+  background: rgb(202, 229, 243);
+}
+
+#cloud1 {
+  top: 3rem;
+}
+
+#cloud2 {
+  animation-name: cloud34;
+  animation-duration: 35s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#cloud2 {
+  top: 4rem;
+}
+
+
+#cloud1::before,
+#cloud2::before {
+  content: "";
+  left: 4rem;
+  top: 1.5rem;
+  background: inherit;
+}
+
+
+#cloud1::after,
+#cloud2::after {
+  content: "";
+  top: 1.5rem;
+  left: -2rem;
+  background: inherit;
+}
+
+/*  */
+.home1 {
+  position: absolute;
+  top: 15rem;
+  left: 3rem;
+  border-left: 6rem solid transparent;
+  border-right: 6rem solid transparent;
+  border-bottom: 5rem solid rgb(183, 194, 195);
+  z-index: 9;
+}
+.home1::before {
+  content: "";
+  width: 12rem;
+  height: 1rem;
+  position: absolute;
+  top: 5rem;
+  left: -6rem;
+  background-color: rgb(183, 194, 195);
+}
+
+.home2 {
+  width: 12rem;
+  height: 10rem;
+  background-color: rgb(183, 194, 195);
+  position: absolute;
+  top: 20rem;
+  left: 3rem;
+  z-index: 8;
+  border: 1px solid;
+}
+
+.home3 {
+  position: absolute;
+  top: 18rem;
+  left: 9rem;
+  border-left: 15rem solid rgb(23, 23, 23);
+  border-right: 7rem solid transparent;
+  border-bottom: 5rem solid rgb(23, 23, 23);
+  z-index: 6;
+}
+
+.home4 {
+  width: 15rem;
+  height: 7rem;
+  background-color: rgb(183, 194, 195);
+  position: absolute;
+  top: 22.6rem;
+  left: 15rem;
+  border: 1px solid;
+  z-index: 8;
+}
+
+.home5 {
+  width: 1rem;
+  height: 7rem;
+  background-color: rgb(253, 253, 253);
+  position: absolute;
+  top: 22.98rem;
+  left: 12rem;
+  border: 1px solid;
+  z-index: 8;
+}
+
+.home5::before {
+  content: "";
+  width: 1rem;
+  height: 7rem;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: -0.16rem;
+  left: -7rem;
+  border: 1px solid;
+  z-index: 8;
+}
+
+.home5::after {
+  content: "";
+  width: 1rem;
+  height: 7.8rem;
+  background-color: rgb(255, 254, 254);
+  position: absolute;
+  transform: rotate(90deg);
+  top: -3.6rem;
+  left: -3.535rem;
+  border: 1px solid;
+  z-index: 8;
+}
+
+/* window */
+.slid2 {
+  width: 1rem;
+  height: 16rem;
+  background-color: rgb(61, 11, 11);
+  position: absolute;
+  transform: rotate(90deg);
+  top: 15.1rem;
+  left: 22.5rem;
+  border: 1px solid;
+  z-index: 8;
+}
+
+/* window */
+.slid2::before {
+  content: "";
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgb(220, 230, 231);
+  position: absolute;
+  top: 10rem;
+  left: 2rem;
+  border: 1px solid;
+  z-index: 8;
+}
+
+.slid2::after {
+  content: "";
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgb(220, 230, 231);
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  border: 1px solid;
+  z-index: 8;
+}
+
+.siling1 {
+  width: 1.7rem;
+  height: 10rem;
+  position: absolute;
+  top: 13.5rem;
+  left: 4.6rem;
+  background-color: black;
+  transform: rotate(49deg);
+  z-index: 10;
+}
+
+.siling1::before {
+  content: "";
+  width: 1.7rem;
+  height: 10rem;
+  position: absolute;
+  top: -5rem;
+  left: 4.3rem;
+  background-color: black;
+  transform: rotate(80deg);
+  z-index: 10;
+}
+
+/* door */
+.door1 {
+  width: 2.8rem;
+  height: 5.7rem;
+  background-color: rgb(125, 44, 17);
+  position: absolute;
+  top: 24.2rem;
+  left: 6.24rem;
+  z-index: 10;
+}
+
+.door1::before {
+  content: "";
+  width: 2.8rem;
+  height: 5.7rem;
+  background-color: rgb(125, 44, 17);
+  position: absolute;
+  top: -0rem;
+  left: 2.9rem;
+  z-index: 10;
+}
+
+.door2 {
+  width: 1.2rem;
+  height: 0.1rem;
+  position: absolute;
+  top: 26rem;
+  left: 8.6rem;
+  background-color: black;
+  z-index: 10;
+}
+
+/* chimni */
+.chimani1 {
+  width: 2rem;
+  height: 3rem;
+  background-color: rgb(220, 220, 220);
+  position: absolute;
+  top: 15rem;
+  left: 20rem;
+  z-index: 20;
+}
+
+.chimani1::before {
+  content: "";
+  width: 2rem;
+  height: 0.3rem;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  z-index: 20;
+}
+
+.chimani2 {
+  width: 3rem;
+  height: 0.2rem;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  transform: rotate(90deg);
+  top: 16.41rem;
+  left: 18.5rem;
+  z-index: 20;
+}
+
+.chimani2::before {
+  content: "";
+  width: 3rem;
+  height: 0.2rem;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  top: -1.9rem;
+  left: 0rem;
+}
+
+/* smok */
+.c1 {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 15rem;
+  left: 20rem;
+  border-radius: 50%;
+  background-color: rgb(147, 147, 144);
+  animation: smok2 0s infinite ease-out;
+  z-index: 1;
+}
+.c1::before {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: -1rem;
+  left: -0.5rem;
+  border-radius: 50%;
+  background-color: rgb(85, 85, 84);
+  animation: smok1 4s infinite ease-out;
+  z-index: 21;
+}
+.c1::after {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: -1rem;
+  left: -0rem;
+  border-radius: 50%;
+  background-color: rgb(96, 96, 93);
+  animation: smok1 2s 2s infinite ease-out;
+  z-index: 20;
+}
+
+@keyframes smok1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(2rem, -5rem) scale(1.5);
+    opacity: 0;
+  }
+}
+@keyframes smok2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(2rem, -5rem) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* windmil.1 */
+
+.windmill-1 {
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 15rem;
+  left: 38rem;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  animation: spin 5s infinite linear;
+  z-index: 20;
+  z-index: 8;
+}
+.tower-1 {
+  position: absolute;
+  top: 15rem;
+  left: 37.5rem;
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  border-bottom: 15rem solid rgb(0, 0, 0);
+  z-index: 8;
+}
+
+.blades-1 {
+  position: absolute;
+  top: -7.778rem;
+  left: 0rem;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 8rem solid rgb(0, 0, 0);
+  z-index: 8;
+}
+.blades-1::before {
+  content: "";
+  position: absolute;
+  top: 6.4rem;
+  left: 3.2rem;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 8rem solid rgb(0, 0, 0);
+  transform: rotate(120deg);
+}
+.blades-1::after {
+  content: "";
+  position: absolute;
+  top: 6.4rem;
+  left: -4.2rem;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 8rem solid rgb(0, 0, 0);
+  transform: rotate(240deg);
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 2 */
+
+.windmill-2 {
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 15rem;
+  left: 70rem;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  animation: spin 5s infinite linear;
+  z-index: 8;
+}
+.tower-2 {
+  position: absolute;
+  top: 15rem;
+  left: 69.5rem;
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  border-bottom: 15rem solid rgb(0, 0, 0);
+  z-index: 8;
+}
+
+.blades-2 {
+  position: absolute;
+  top: -7.778rem;
+  left: 0rem;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 8rem solid rgb(0, 0, 0);
+  z-index: 8;
+}
+.blades-2::before {
+  content: "";
+  position: absolute;
+  top: 6.4rem;
+  left: 3.2rem;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 8rem solid rgb(0, 0, 0);
+  transform: rotate(120deg);
+}
+.blades-2::after {
+  content: "";
+  position: absolute;
+  top: 6.4rem;
+  left: -4.2rem;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 8rem solid rgb(0, 0, 0);
+  transform: rotate(240deg);
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* cars */
+.car{
+  top: 30rem;
+  left: 3rem;
+  position: absolute;
+  height: 4rem;
+  width: 5rem;
+  animation: motion-car 5s linear infinite;
+  z-index: 1;
+}
+#body{
+  position: absolute;
+  /* height: 0; */
+  width: 8rem;
+  border-left: 2rem solid transparent;
+  border-right: 3rem solid transparent ;
+  border-bottom: 2rem solid black ;
+  border-radius: 80% 80% 0 0;
+}
+#body::after{
+  content: '';
+  position: absolute;
+  position: inherit;
+  top: 2rem;
+  left: -4rem;
+  height: 2.5rem;
+  width: 14rem;
+  background-color: red;
+  border-top: solid;
+  border-radius: 1rem 1rem 4px 4px ; 
+}
+#body::before{
+  content: '';
+  position: absolute;
+  position: inherit;
+  height: 1rem;
+  width: 1rem;
+  top: 2.2rem;
+  left: 9rem;
+  background-color: rgb(216, 206, 206);
+  border-radius: 2rem 10rem 0 10rem;
+  z-index: 2;
+}
+#wheel{
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  background-color: rgb(34, 21, 21);
+  border-radius: 50%;
+  top: 3.5rem;
+}
+#wheel::after{
+  content: '';
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  background-color: rgb(34, 21, 21);
+  border-radius: 50%;
+  left: 8rem;
+}
+
+@keyframes motion-car {
+  0%{
+    transform: translateX(-15rem);
+  }
+  100%{
+    transform: translateX(82rem);
+  }
+}
+
+/* animations */
+
+@keyframes body {
+  0% {
+    background-color: #f8e9d5; /* soft peach */
+  }
+
+  25% {
+    background-color: #a1c4fd; /* light sky blue */
+  }
+
+  50% {
+    background-color: #fda085; /* coral orange */
+  }
+
+  75% {
+    background-color: #2c3e50; /* deep navy */
+  }
+
+  100% {
+    background-color: #ffecd2; /* back to peach */
+  }
+}
+
+@keyframes bulb {
+  0% {
+    box-shadow: none;
+  }
+
+  40% {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: none;
+  }
+
+  50% {
+    background: #ffd700;
+    box-shadow: 0 0 15px yellow, 0 0 30px rgba(255, 215, 0, 0.7);
+  }
+
+  99% {
+    background: #ffd700;
+    box-shadow: 0 0 15px yellow, 0 0 30px rgba(255, 215, 0, 0.7);
+  }
+
+  100% {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: none;
+  }
+}
+
+@keyframes sun {
+  0% {
+    transform: translate(0, -2rem);
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+    background-color: #ffd700;
+    box-shadow: 0 0 20px #ffd700;
+  }
+
+  25% {
+    transform: translate(47.5rem, -16rem);
+    opacity: 1;
+    background-color: #ffff00;
+    box-shadow: 0 0 30px #ffff00;
+  }
+
+  50% {
+    transform: translate(95rem, -2rem);
+    opacity: 1;
+    background-color: #ffa500;
+    box-shadow: 0 0 20px #ffa500;
+  }
+
+  100% {
+    transform: translate(95rem, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes moon {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+
+  45% {
+    transform: translate(0, -2rem);
+    opacity: 1;
+  }
+
+  75% {
+    transform: translate(47.5rem, -16rem);
+    opacity: 1;
+  }
+
+  95% {
+    transform: translate(95rem, -2rem);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translate(95rem, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes cloud {
+  0% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    transform: translateX(100rem);
+  }
+}
+
+@keyframes cloud34 {
+  0% {
+    transform: translateX(90rem);
+  }
+
+  100% {
+    transform: translateX(1rem);
+  }
+}
+
+@keyframes Morning {
+  0% {
+    opacity: 0.2;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes Day {
+  0% {
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes Sunset {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes Night {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .lamp {
+    transform: scale(0.8);
+    top: 26.8rem;
+  }
+  #lamp2 {
+    top: 9.5rem;
+  }
+  #light2 {
+    top: 8.8rem;
+  }
+  .house {
+    transform: scale(0.8);
+  }
+  .windmill {
+    transform: scale(0.7);
+    bottom: 10.4rem;
+    left: 20rem;
+  }
+  .tower-1,
+  .windmill-1
+{
+  margin-left: -3rem;
+}
+.tower-2,
+.windmill-2
+{
+  margin-left: -16rem;
+}
+
+
+
+  #line {
+    left: 3rem;
+  }
+  .line1,
+  .line2 {
+    transform: scale(1.1);
+  }
+  .line2 {
+    left: 30rem;
+  }
+  .line3 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .slid2,
+  .home3,
+  .home4 {
+    display: none;
+  }
+  .chimani1,
+  .chimani2 {
+    margin-left: -10rem;
+    z-index: 3;
+    margin-top: -0.8rem;
+  }
+  .c1 {
+    margin-left: -10rem;
+    /* z-index: 3; */
+    margin-top: -0.8rem;
+  }
+
+  .container {
+    width: 25rem;
+  }
+  .house {
+    transform: scale(0.6);
+    left: 0.5rem;
+  }
+  .windmill {
+    transform: 7cale (0.7);
+    left: 6rem;
+  }
+  .tower-2,
+  .windmill-2,
+  .blades-2 {
+    display: none;
+  }
+ 
+    .tower-1,
+  .windmill-1
+{
+  margin-left: -22rem;
+  z-index: 4;
+  /* width: 0.3rem; */
+}
+
+  #lamp3,
+  #lamp1::after,
+  #lamp1::before,
+  #lamp2::after,
+  #lamp2::before {
+    display: none;
+  }
+  .sky {
+    animation-duration: 30s;
+  }
+  .morning {
+    animation-name: motion-Morning;
+  }
+  .day {
+    animation-name: motion-Day;
+  }
+  .sunset {
+    animation-name: motion-Sunset;
+  }
+  .night {
+    animation-name: motion-Night;
+  }
+  #sun {
+    animation: motion-sun 30s linear infinite;
+  }
+  #moon {
+    animation: motion-moon 30s linear infinite;
+  }
+  .cloud {
+    animation: motion-cloud 15s linear infinite;
+  }
+  #cloud2 {
+    animation: motion-cloud34 15s linear infinite;
+    /* width: 10rem;
+    height: 7rem; */
+  }
+
+
+#cloud1,
+#cloud1::before,
+#cloud1::after,
+#cloud2,
+#cloud2::before,
+#cloud2::after {
+  top: 2rem;
+  width: 7rem;
+  height:4rem;
+  border-radius: 50%;
+  position: absolute;
+  background: rgb(202, 229, 243);
+}
+#cloud2,
+#cloud2::before,
+#cloud2::after {
+  top: 7rem;
+}
+#cloud1::before,
+#cloud2::before {
+  content: "";
+  left: 3rem;
+  top: 1rem;
+  background: inherit;
+}
+
+
+#cloud1::after,
+#cloud2::after {
+  content: "";
+  top: 1rem;
+  left: -2rem;
+  background: inherit;
+}
+ 
+ 
+  #light1,
+  #light2 {
+    animation: light 30s linear infinite;
+  }
+  #light {
+    display: none;
+  }
+}
+@keyframes light {
+  0% {
+    box-shadow: none;
+  }
+
+  40% {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: none;
+  }
+
+  50% {
+    background: #ffd700;
+    box-shadow: 0 0 15px yellow, 0 0 30px rgba(255, 215, 0, 0.7);
+  }
+
+  99% {
+    background: #ffd700;
+    box-shadow: 0 0 15px yellow, 0 0 30px rgba(255, 215, 0, 0.7);
+  }
+
+  100% {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: none;
+  }
+}
+
+@keyframes motion-sun {
+  0% {
+    transform: translate(0, -5rem);
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+    background-color: #ffd700;
+    box-shadow: 0 0 20px #ffd700;
+  }
+
+  25% {
+    transform: translate(15rem, -13rem);
+    opacity: 1;
+    background-color: #ffff00;
+    box-shadow: 0 0 30px #ffff00;
+    
+  }
+
+  55% {
+    transform: translate(30rem, -5rem);
+    opacity: 1;
+    background-color: #ffa500;
+    box-shadow: 0 0 20px #ffa500;
+    
+  }
+  56%{
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(30rem, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes motion-moon {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+
+  45% {
+    transform: translate(0, -5rem);
+    opacity: 1;
+  }
+
+  75% {
+    transform: translate(15rem, -13rem);
+    opacity: 1;
+  }
+ 97% {
+    /* transform: translate(30rem, -5rem); */
+    opacity: 1;
+  }
+  99% {
+    transform: translate(30rem, -5rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(30rem, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes motion-cloud {
+  0% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    transform: translateX(30rem);
+  }
+}
+
+@keyframes motion-cloud34 {
+  0% {
+    transform: translateX(30rem);
+  }
+
+  100% {
+    transform: translateX(1rem);
+  }
+}
+@keyframes motion-Morning {
+  0% {
+    opacity: 0.2;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes motion-Day {
+  0% {
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes motion-Sunset {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes motion-Night {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
+
+
+
